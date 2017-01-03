@@ -6,6 +6,7 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -23,6 +24,15 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['ember-simple-auth'] = {
+    authorizer: 'authorizer:token',
+  };
+  ENV['ember-simple-auth-token'] = {
+    serverTokenEndpoint: 'http://localhost:8000/api/login/',
+    serverTokenRefreshEndpoint: 'http://localhost:8000/api/token-refresh/',
+    timeFactor: 1000,
+    refreshLeeway: 5
+  };
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;

@@ -1,0 +1,5 @@
+<article class="listing">
+  <h3>{{#link-to "feeds.show" feed}}{{feed.name}}{{/link-to}}{{if isSubscribed "- subscribed"}}</h3>
+  <a {{action 'toggleSubscription'}}>subscribe</a>
+  <div class="feed site"><a href="{{feed.site}}">{{feed.site}}</a> </div>
+</article>

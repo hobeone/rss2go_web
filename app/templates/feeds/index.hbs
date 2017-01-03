@@ -1,0 +1,9 @@
+{{#list-filter filter=(action 'filterByName') as |feeds|}}
+  <ul class="results">
+    {{#each feeds as |feed|}}
+      <li>{{feed-listing feed=feed}}</li>
+    {{/each}}
+  </ul>
+{{/list-filter}}
+
+{{outlet}}
