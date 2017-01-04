@@ -1,5 +1,5 @@
 export default function() {
-  this.namespace = '/api';
+  this.namespace = 'http://localhost:8000/api/v1';
 
   let feeds = [{
     type: 'feeds',
