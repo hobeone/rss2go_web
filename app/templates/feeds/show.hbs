@@ -1,3 +1,39 @@
-<div class="jumbo show-feed-listing">
+<div class="col-md-8">
   <h2 class="feed-name">{{model.name}}</h2>
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <td>Name</td>
+        <td>{{model.name}}</td>
+      </tr>
+      <tr>
+        <td>URL</td>
+        <td>{{ember-inline-edit value=model.url showEditButton=true onSave=(action "changeValue" "url")}}</td>
+      </tr>
+      <tr>
+        <td>Site</td>
+        <td><a href="{{model.siteUrl}}">{{model.siteUrl}}</a></td>
+      </tr>
+      <tr>
+        <td>Last Seen</td>
+        <td>{{model.lastPollTime}}</td>
+      </tr>
+
+      {{#if model.lastPollError}}
+      <tr>
+        <td>Last Error</td>
+        <td>{{model.lastPollTime}}:<br/>{{model.lastPollError}}</td>
+      </tr>
+      {{/if}}
+    </tbody>
+  </table>
+  {{#if model.errors}}
+  <span class="label label-danger">Error Saving Feed:</span>
+  <br/>
+    <ul class="list-group">
+      {{#each model.errors.messages as |message|}}
+      <li class="list-group-item">{{message}}</li>
+      {{/each}}
+    </ul>
+{{/if}}
 </div>

@@ -4,8 +4,9 @@ export default Ember.Component.extend({
   isSubscribed: false,
 
   actions: {
-    toggleSubscription() {
-      this.toggleProperty('isSubscribed');
+    unsubscribe() {
+      let feed = this.get('feed');
+      feed.unsubscribe();
     }
   }
 });

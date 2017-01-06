@@ -1,9 +1,12 @@
+<div class="col-sm-6">
 {{#list-filter filter=(action 'filterByName') as |feeds|}}
-  <ul class="results">
+<br/>
+<br/>
+  <ul class="list-group">
     {{#each feeds as |feed|}}
-      <li>{{feed-listing feed=feed}}</li>
+      <li class="list-group-item">{{feed-listing feed=feed}}</li>
     {{/each}}
   </ul>
 {{/list-filter}}
-
+</div>
 {{outlet}}

@@ -9,6 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('feeds', function() {
     this.route('show', { path: '/:feed_id'});
+    this.route('add');
   });
   this.route('login');
 });
